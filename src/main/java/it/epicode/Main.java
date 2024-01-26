@@ -1,17 +1,18 @@
 package it.epicode;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import it.epicode.dao.PrestitoDAO;
+import it.epicode.dao.PubblicazioneDAO;
+import it.epicode.dao.UtenteDAO;
+import it.epicode.entities.*;
+
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        PubblicazioneDAO pubblicazioneDAO = new PubblicazioneDAO();
+        UtenteDAO utenteDAO = new UtenteDAO();
+        PrestitoDAO prestitoDAO = new PrestitoDAO();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println(utenteDAO.getById(1));
     }
 }
